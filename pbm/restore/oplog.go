@@ -24,7 +24,7 @@ var skipNs = map[string]struct{}{
 }
 
 func init() {
-	// add to skip collections that would be skiped while dump restore
+	// add to skip collections that would be skipped while dump restore
 	for _, v := range excludeFromDumpRestore {
 		skipNs[v] = struct{}{}
 	}
@@ -49,7 +49,7 @@ func NewOplog(dst *pbm.Node, sv *pbm.MongoVersion, preserveUUID bool) *Oplog {
 	}
 }
 
-// Apply applys an oplog from a given source
+// Apply applies an oplog from a given source
 func (o *Oplog) Apply(src io.ReadCloser) error {
 	bsonSource := db.NewDecodedBSONSource(db.NewBufferlessBSONSource(src))
 	defer bsonSource.Close()

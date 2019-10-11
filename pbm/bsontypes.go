@@ -51,7 +51,7 @@ func (im *IsMaster) IsSharded() bool {
 	return im.SetName != "" && (im.ConfigServerState != nil || im.ConfigSvr == 2)
 }
 
-// ReplsetRole returns replset role in sharded clister
+// ReplsetRole returns replset role in sharded cluster
 func (im *IsMaster) ReplsetRole() ReplRole {
 	switch {
 	case im.ConfigSvr == 2:

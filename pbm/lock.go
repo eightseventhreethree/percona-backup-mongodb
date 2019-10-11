@@ -20,7 +20,7 @@ var errLocked = errors.New("locked")
 
 // AcquireLock tries to acquire lock on operation (e.g. backup, restore).
 // It returns true in case of success and false if there is
-// lock already acquired by another process or some error happend.
+// lock already acquired by another process or some error happened.
 func (p *PBM) AcquireLock(l Lock) (bool, error) {
 	c := p.Conn.Database(DB).Collection(OpCollection)
 	_, err := c.Indexes().CreateOne(

@@ -77,7 +77,7 @@ func runAgent(mongoURI string) error {
 	}
 
 	agnt := agent.New(pbmClient)
-	// TODO: pass only options and connect while createing a node?
+	// TODO: pass only options and connect while creating a node?
 	agnt.AddNode(ctx, node, mongoURI)
 
 	fmt.Println("pbm agent is listening for the commands")

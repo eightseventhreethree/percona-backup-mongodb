@@ -71,7 +71,7 @@ func readInto(dst, src []byte) (rmd []byte, n int) {
 	return rmd, n
 }
 
-// Run starts tailing the oplog data until the context beign canceled.
+// Run starts tailing the oplog data until the context being canceled.
 // Returned chan is need to indicate
 // To read data use Read method.
 func (ot *OplogTailer) Run(ctx context.Context) error {

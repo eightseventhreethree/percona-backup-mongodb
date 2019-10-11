@@ -19,8 +19,8 @@ import (
 )
 
 // Source returns io.ReadCloser for the given storage.
-// In case compression are used it alse return io.Closer wich should be used
-// to close undelying Reader
+// In case compression are used it also return io.Closer which should be used
+// to close underlying Reader
 func Source(stg pbm.Storage, name string, compression pbm.CompressionType) (io.ReadCloser, io.Closer, error) {
 	var (
 		rr io.ReadCloser

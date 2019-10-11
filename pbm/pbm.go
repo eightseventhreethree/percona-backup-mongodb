@@ -104,12 +104,12 @@ func New(ctx context.Context, uri string) (*PBM, error) {
 	// no need in this connection anymore
 	client.Disconnect(ctx)
 	if err != nil {
-		return nil, errors.Wrap(err, "get config server connetion URI")
+		return nil, errors.Wrap(err, "get config server connection URI")
 	}
 
 	chost := strings.Split(csvr.URI, "/")
 	if len(chost) < 2 {
-		return nil, errors.Wrapf(err, "define config server connetion URI from %s", csvr.URI)
+		return nil, errors.Wrapf(err, "define config server connection URI from %s", csvr.URI)
 	}
 
 	curi, err := url.Parse(uri)
