@@ -95,7 +95,7 @@ func (a *Agent) Backup(bcp pbm.BackupCmd) {
 	}
 
 	// have wait random time (1 to 100 ms) before acquiring lock
-	// otherwise all agent could acquire own locks
+	// otherwise all angent could aquire own locks
 	time.Sleep(time.Duration(rand.Int63n(1e2)) * time.Millisecond)
 	// TODO: check if lock from "another" backup and notify user
 	got, err := a.pbm.AcquireLock(lock)
